@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tandon's Jalpan | Heritage Sweets & Dining in Patna</title>
+    <meta name="description" content="Established in 1981, Tandon's Jalpan is Patna's iconic heritage destination for famous Samosas, Gulab Jamun, Rasmalai, and exquisite North Indian & Chinese dishes.">
+    <meta name="theme-color" content="#1a0509">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Color Palette: Heritage Burgundy & Marigold */
+            --clr-primary: hsl(38, 100%, 55%);
+            --clr-primary-light: hsl(42, 100%, 65%);
+            --clr-primary-dark: hsl(35, 100%, 45%);
+            
+            --clr-bg: hsl(345, 70%, 10%); /* Very dark burgundy */
+            --clr-surface: hsl(345, 60%, 15%);
+            --clr-surface-alt: hsl(345, 50%, 20%);
+            
+            --clr-text: hsl(40, 30%, 95%);
+            --clr-text-muted: hsl(40, 20%, 75%);
+            
+            --clr-glass-bg: rgba(77, 13, 29, 0.3);
+            --clr-glass-border: rgba(255, 175, 51, 0.15);
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            
+            /* Layout */
+            --container-width: 1200px;
+            
+            /* Shadows & Transitions */
+            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--clr-bg);
+            color: var(--clr-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 166, 0, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 166, 0, 0.03) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--clr-text);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Layout Utilities */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+        
+        .section {
+            padding: var(--space-xl) 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .section-subtitle {
+            font-family: var(--font-body);
+            color: var(--clr-primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: var(--space-sm);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--clr-primary);
+        }
+        
+        /* Components */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--clr-primary);
+            color: var(--clr-bg);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--clr-primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 175, 51, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--clr-primary);
+            border: 1px solid var(--clr-primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--clr-primary);
+            color: var(--clr-bg);
+            transform: translateY(-2px);
+        }
+        
+        .glass-card {
+            background: var(--clr-glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--clr-glass-border);
+            border-radius: 12px;
+            padding: var(--space-md);
+            box-shadow: var(--shadow-glass);
+            transition: var(--transition);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 175, 51, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+        
+        .header.scrolled {
+            padding: 1rem 0;
+            background: rgba(18, 3, 7, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--clr-text);
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        
+        .logo span {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            color: var(--clr-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--clr-text-muted);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--clr-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--clr-primary);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--clr-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 2, 6, 0.9) 0%, rgba(56, 9, 21, 0.8) 100%);
+            z-index: -1;
+        }
+        
+        /* Simulating an image with gradient for demo purposes */
+        .hero-image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, var(--clr-surface) 0%, var(--clr-bg) 100%);
+            z-index: -2;
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 var(--space-sm);
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 175, 51, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: var(--space-md);
+            backdrop-filter: blur(4px);
+        }
+        
+        .hero-badge i {
+            color: var(--clr-primary);
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 5vw, 5rem);
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            font-style: italic;
+        }
+        
+        .hero-title span {
+            color: var(--clr-primary);
+            font-style: normal;
+        }
+        
+        .hero-desc {
+            font-size: 1.125rem;
+            color: var(--clr-text-muted);
+            margin-bottom: var(--space-md);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: linear-gradient(45deg, var(--clr-surface-alt), var(--clr-surface));
+            border: 1px solid var(--clr-glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-glass);
+        }
+        
+        .about-image i {
+            font-size: 5rem;
+            color: rgba(255, 175, 51, 0.2);
+        }
+        
+        .about-image::before {
+            content: '1981';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.03);
+            font-weight: 700;
+        }
+        
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+            color: var(--clr-primary);
+        }
+        
+        .about-content p {
+            color: var(--clr-text-muted);
+            margin-bottom: var(--space-sm);
+            font-size: 1.05rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--space-md);
+        }
+        
+        .stat-item h4 {
+            font-size: 1.5rem;
+            color: var(--clr-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-item p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        
+        /* Menu Section */
+        .menu-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--clr-text);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--clr-primary);
+            color: var(--clr-bg);
+            border-color: var(--clr-primary);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .menu-item-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--clr-surface), var(--clr-surface-alt));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            font-size: 3rem;
+            color: var(--clr-primary-dark);
+        }
+        
+        .menu-item-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .menu-item-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .menu-item-desc {
+            font-size: 0.875rem;
+            color: var(--clr-text-muted);
+        }
+        
+        .menu-item-price {
+            font-weight: 600;
+            color: var(--clr-primary);
+            font-size: 1.125rem;
+        }
+        
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-sm);
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            background: linear-gradient(45deg, var(--clr-surface-alt), var(--clr-surface));
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item i {
+            font-size: 2.5rem;
+            color: var(--clr-primary-dark);
+            transition: var(--transition);
+        }
+        
+        .gallery-item span {
+            font-family: var(--font-heading);
+            color: var(--clr-text-muted);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            border-color: var(--clr-primary);
+        }
+        
+        .gallery-item:hover i {
+            transform: scale(1.2);
+            color: var(--clr-primary);
+        }
+        
+        .gallery-item:hover span {
+            color: var(--clr-text);
+        }
+        
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .testimonial-card {
+            position: relative;
+            padding-top: 2rem;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: 0;
+            left: 1.5rem;
+            font-size: 3rem;
+            color: rgba(255, 175, 51, 0.15);
+            line-height: 1;
+        }
+        
+        .stars {
+            color: var(--clr-primary);
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--clr-text-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--clr-surface-alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-primary);
+        }
+        
+        .author-info h5 {
+            font-size: 1rem;
+            margin-bottom: 0.1rem;
+        }
+        
+        .author-info p {
+            font-size: 0.75rem;
+            color: var(--clr-text-muted);
+        }
+        
+        /* Location & Contact */
+        .contact-section {
+            background-color: var(--clr-surface);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-lg);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 175, 51, 0.1);
+            color: var(--clr-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-details p {
+            color: var(--clr-text-muted);
+            margin-bottom: 0.25rem;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--clr-surface-alt);
+            border: 1px solid var(--clr-glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--clr-bg);
+            padding: var(--space-lg) 0 var(--space-sm);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-desc {
+            color: var(--clr-text-muted);
+            max-width: 400px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--clr-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-text);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .social-link:hover {
+            background: var(--clr-primary);
+            color: var(--clr-bg);
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--clr-primary);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .footer-link {
+            color: var(--clr-text-muted);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-link::before {
+            content: '\f105';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.75rem;
+            color: var(--clr-primary);
+            transition: var(--transition);
+        }
+        
+        .footer-link:hover {
+            color: var(--clr-primary);
+        }
+        
+        .footer-link:hover::before {
+            transform: translateX(3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--clr-text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+            color: white;
+        }
+        
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-grid, .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --space-xl: 4rem;
+                --space-lg: 3rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--clr-surface);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                Tandon's Jalpan
+                <span>Heritage Brand Est. 1981</span>
+            </a>
+            
+            <button class="mobile-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">Our Legacy</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-image-placeholder"></div>
+        <div class="hero-bg"></div>
+        
+        <div class="container">
+            <div class="hero-content reveal active">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>4.4/5 Rating (1000+ Reviews)</span>
+                </div>
+                <h1 class="hero-title">Taste the <span>Heritage</span> of Patna</h1>
+                <p class="hero-desc">An iconic culinary destination serving the finest traditional sweets, famous samosas, and exquisite North Indian & Chinese dishes since 1981.</p>
+                <div class="hero-cta">
+                    <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                    <a href="tel:+919334369201" class="btn btn-outline">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                
+                <div class="about-content reveal">
+                    <span class="section-subtitle">Our Story</span>
+                    <h2 class="section-title">A Legacy of Authentic Taste Since 1981</h2>
+                    
+                    <div style="margin-top: 2rem;">
+                        <p>For over four decades, Tandon's Jalpan has been synonymous with quality, tradition, and unmatched taste in Patna City. What started as a humble beginning in 1981 has now grown into an iconic food destination loved by generations.</p>
+                        
+                        <p>Located in the heart of Sabzi Bazar, Chowk, we take pride in preserving the authentic recipes of our heritage sweets like Gulab Jamun and Rasmalai, while also offering the city's most loved Samosas, crispy Chaat, and a rich variety of North Indian and Chinese delicacies.</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <h4>40+</h4>
+                                <p>Years of Legacy</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>100+</h4>
+                                <p>Delicacies</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>1M+</h4>
+                                <p>Happy Customers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="section" id="menu" style="background-color: var(--clr-surface);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Our Offerings</span>
+                <h2 class="section-title">Culinary Masterpieces</h2>
+            </div>
+            
+            <div class="menu-filter reveal">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Heritage Sweets</button>
+                <button class="filter-btn">Famous Snacks</button>
+                <button class="filter-btn">Main Course</button>
+            </div>
+            
+            <div class="menu-grid reveal">
+                <!-- Menu Item 1 -->
+                <div class="glass-card menu-item">
+                    <div class="menu-item-img">
+                        <i class="fas fa-cookie"></i>
+                    </div>
+                    <div class="menu-item-info">
+                        <div>
+                            <h3 class="menu-item-title">Iconic Samosa</h3>
+                            <p class="menu-item-desc">Crispy pastry filled with spiced potatoes and peas.</p>
+                        </div>
+                        <span class="menu-item-price">₹20<small style="font-size: 0.6rem; color: #aaa;">(Demo)</small></span>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="glass-card menu-item">
+                    <div class="menu-item-img">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <div class="menu-item-info">
+                        <div>
+                            <h3 class="menu-item-title">Kesariya Rasmalai</h3>
+                            <p class="menu-item-desc">Soft paneer discs soaked in saffron-infused milk.</p>
+                        </div>
+                        <span class="menu-item-price">₹60<small style="font-size: 0.6rem; color: #aaa;">(Demo)</small></span>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="glass-card menu-item">
+                    <div class="menu-item-img">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="menu-item-info">
+                        <div>
+                            <h3 class="menu-item-title">Special Gulab Jamun</h3>
+                            <p class="menu-item-desc">Deep-fried khoya dumplings in rose syrup.</p>
+                        </div>
+                        <span class="menu-item-price">₹40<small style="font-size: 0.6rem; color: #aaa;">(Demo)</small></span>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 4 -->
+                <div class="glass-card menu-item">
+                    <div class="menu-item-img">
+                        <i class="fas fa-bowl-food"></i>
+                    </div>
+                    <div class="menu-item-info">
+                        <div>
+                            <h3 class="menu-item-title">Aloo Tikki Chaat</h3>
+                            <p class="menu-item-desc">Spicy potato patties with yogurt and chutneys.</p>
+                        </div>
+                        <span class="menu-item-price">₹80<small style="font-size: 0.6rem; color: #aaa;">(Demo)</small></span>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 5 -->
+                <div class="glass-card menu-item">
+                    <div class="menu-item-img">
+                        <i class="fas fa-plate-wheat"></i>
+                    </div>
+                    <div class="menu-item-info">
+                        <div>
+                            <h3 class="menu-item-title">Special Thali</h3>
+                            <p class="menu-item-desc">Assorted North Indian dishes with bread and rice.</p>
+                        </div>
+                        <span class="menu-item-price">₹250<small style="font-size: 0.6rem; color: #aaa;">(Demo)</small></span>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 6 -->
+                <div class="glass-card menu-item">
+                    <div class="menu-item-img">
+                        <i class="fas fa-bowl-rice"></i>
+                    </div>
+                    <div class="menu-item-info">
+                        <div>
+                            <h3 class="menu-item-title">Veg Hakka Noodles</h3>
+                            <p class="menu-item-desc">Indo-Chinese style stir-fried noodles with veggies.</p>
+                        </div>
+                        <span class="menu-item-price">₹180<small style="font-size: 0.6rem; color: #aaa;">(Demo)</small></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;" class="reveal">
+                <a href="#" class="btn btn-outline">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Visual Treat</span>
+                <h2 class="section-title">Glimpses of Jalpan</h2>
+            </div>
+            
+            <div class="gallery-grid reveal">
+                <div class="gallery-item">
+                    <i class="fas fa-store"></i>
+                    <span>Storefront</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-boxes-packing"></i>
+                    <span>Sweet Boxes</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-bowl-food"></i>
+                    <span>Chaat Counter</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Dining Area</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-fire-burner"></i>
+                    <span>Live Kitchen</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-cookie"></i>
+                    <span>Fresh Sweets</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-people-group"></i>
+                    <span>Happy Guests</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-award"></i>
+                    <span>Our Heritage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background-color: var(--clr-surface);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Customer Love</span>
+                <h2 class="section-title">What Patna Says</h2>
+            </div>
+            
+            <div class="testimonial-grid reveal">
+                <div class="glass-card testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The best samosas in Patna City without a doubt! I've been coming here since my childhood and the taste hasn't changed a bit. The Rasmalai is a must-try!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h5>Rahul Kumar <small style="font-weight:normal; color:#888;">(Demo)</small></h5>
+                            <p>Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"A true heritage spot. We ordered sweets for our family function and everyone loved the Gulab Jamun. Highly recommend Tandon's for authentic taste and hygiene."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h5>Priya Sharma <small style="font-weight:normal; color:#888;">(Demo)</small></h5>
+                            <p>Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Great place for evening snacks. The Chaat options are amazing and their Chinese menu is surprisingly good for a traditional sweet shop. A must-visit in Ashok Rajpath."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h5>Amit Singh <small style="font-weight:normal; color:#888;">(Demo)</small></h5>
+                            <p>Food Blogger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Visit Us</span>
+                <h2 class="section-title">Get in Touch</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Location</h4>
+                            <p>Sabzi Bazar, Chowk, Ashok Rajpath Road,</p>
+                            <p>Near/Opposite Nandu Ji Kachori Wale,</p>
+                            <p>Hajiganj, Patna, Bihar 800008</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p>+91 93343 69201</p>
+                            <p>+91 93340 11149 (Alt)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Opening Hours</h4>
+                            <p>Monday - Sunday</p>
+                            <p>8:00 AM - 10:00 PM <small>(Demo)</small></p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="https://wa.me/919334369201" target="_blank" class="btn btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                            <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <div class="map-container">
+                        <!-- Placeholder for Map -->
+                        <div style="text-align: center; padding: 2rem;">
+                            <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--clr-primary); margin-bottom: 1rem;"></i>
+                            <h3>Interactive Map</h3>
+                            <p style="color: var(--clr-text-muted); margin-top: 0.5rem;">(Google Maps Embed Placeholder)</p>
+                            <p style="font-size: 0.875rem; color: #888; margin-top: 1rem;">Sabzi Bazar, Chowk, Ashok Rajpath Road</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="logo footer-logo">
+                        Tandon's Jalpan
+                        <span>Heritage Brand Est. 1981</span>
+                    </a>
+                    <p class="footer-desc">Patna's iconic heritage destination for authentic sweets, famous snacks, and exquisite dining experiences since 1981.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home" class="footer-link">Home</a>
+                        <a href="#about" class="footer-link">Our Legacy</a>
+                        <a href="#menu" class="footer-link">Menu</a>
+                        <a href="#gallery" class="footer-link">Gallery</a>
+                        <a href="#contact" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Categories</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Heritage Sweets</a>
+                        <a href="#" class="footer-link">Famous Snacks</a>
+                        <a href="#" class="footer-link">North Indian Thali</a>
+                        <a href="#" class="footer-link">Indo-Chinese</a>
+                        <a href="#" class="footer-link">Bulk Orders</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tandon's Jalpan. All rights reserved. | <a href="http://tandononline.com" target="_blank" style="color: var(--clr-primary);">Official Website</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919334369201" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                
+                // Active state
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Optional: Stop observing once revealed
+                    // observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+        
+        // Ensure first section elements are visible on load
+        setTimeout(() => {
+            document.querySelectorAll('.hero .reveal').forEach(el => {
+                el.classList.add('active');
+            });
+        }, 100);
+    </script>
+</body>
+</html>
